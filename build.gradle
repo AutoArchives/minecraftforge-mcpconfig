@@ -60,11 +60,6 @@ task extractRuntimeApi(type: ExtractAPI, dependsOn: downloadRuntime) {
 }
 */
 
-if (project.hasProperty('old_version') && project.hasProperty('new_version')) {
-    println('Update Old: ' + project.getProperty('old_version') + ' New: ' + project.getProperty('new_version'))
-    apply from: 'update.gradle'
-}
-
 subprojects {
     apply plugin: 'java'
     apply plugin: 'de.undercouch.download'
