@@ -1,0 +1,39 @@
+--- a/net/minecraft/client/renderer/LevelEventHandler.java
++++ b/net/minecraft/client/renderer/LevelEventHandler.java
+@@ -321,7 +321,7 @@
+             case 2002:
+                 this.potionSplashParticles(ParticleTypes.EFFECT, pos, data, random);
+                 break;
+-            case 2003:
++            case 2003: {
+                 double x = pos.getX() + 0.5;
+                 double y = pos.getY();
+                 double z = pos.getZ() + 0.5;
+@@ -354,7 +354,8 @@
+                         );
+                 }
+                 break;
+-            case 2004:
++            }
++            case 2004: {
+                 for (int i = 0; i < 20; i++) {
+                     double x = pos.getX() + 0.5 + (random.nextDouble() - 0.5) * 2.0;
+                     double y = pos.getY() + 0.5 + (random.nextDouble() - 0.5) * 2.0;
+@@ -363,7 +364,8 @@
+                     this.level.addParticle(ParticleTypes.FLAME, x, y, z, 0.0, 0.0, 0.0);
+                 }
+                 break;
+-            case 2006:
++            }
++            case 2006: {
+                 for (int i = 0; i < 200; i++) {
+                     float dist = random.nextFloat() * 4.0F;
+                     float angle = random.nextFloat() * (float) (Math.PI * 2);
+@@ -386,6 +388,7 @@
+                     this.level.playLocalSound(pos, SoundEvents.DRAGON_FIREBALL_EXPLODE, SoundSource.HOSTILE, 1.0F, random.nextFloat() * 0.1F + 0.9F, false);
+                 }
+                 break;
++            }
+             case 2007:
+                 this.potionSplashParticles(ParticleTypes.INSTANT_EFFECT, pos, data, random);
+                 break;
